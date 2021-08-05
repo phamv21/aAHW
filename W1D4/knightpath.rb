@@ -4,6 +4,7 @@ class KnightPathFinder
     def initialize(begin_position)
         @root_note = PolyTreeNode.new(begin_position)
         @consider_positions = [begin_position]
+        self.build_move_tree
     end
 
     def self.valid_moves(position)
@@ -22,7 +23,17 @@ class KnightPathFinder
 
 
     def build_move_tree
-        
+        queue = [@root_note]
+        until queue.empty?
+            first = queue.shift
+            new_positions = new_move_positions(first.value)
+            new_nodes = new_positions.map do |pos| 
+                node = PolyTreeNode.new(pos)
+                node.parent = first
+                node
+            end
+            queue.push(*new_nodes)
+        end
     end
 
     def find_path
