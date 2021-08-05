@@ -2,10 +2,9 @@ require_relative 'tic_tac_toe'
 
 class TicTacToeNode
   attr_reader :board, :next_mover_mark, :prev_move_pos
-  def initialize(board, nmm, pmp = nil)
+  def initialize(board, nmm, pmp = [])
     @board = board
     @next_mover_mark = nmm
-    pmp ||= []
     @prev_move_pos = pmp
   end
 
@@ -62,8 +61,8 @@ class TicTacToeNode
           board_copy = board.dup
           board_copy[[r,c]] = self.next_mover_mark
           new_next_mover_mark = self.next_mover_mark == :x ? :o : :x
-          new_prev_move_pos = prev_move_pos.dup
-          new_prev_move_pos.push(r,c)
+          new_prev_move_pos = prev_move_pos.map{|el| el.dup}
+          new_prev_move_pos << [r,c]
           nodes << TicTacToeNode.new(board_copy,new_next_mover_mark,new_prev_move_pos)
         end
       end
