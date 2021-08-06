@@ -31,7 +31,7 @@ describe TicTacToeNode do
     end
 
     it "all their #prev_mov_pos values are their parents'" do
-      child_prev_moves = empty_board_node.children.map{|el| el.prev_move_pos.flatten}
+      child_prev_moves = empty_board_node.children.inject([]){|a,b| a + b.prev_move_pos}
       positions = [0, 1, 2].product([0, 1, 2])
       expect(child_prev_moves).to match_array(positions)
     end
