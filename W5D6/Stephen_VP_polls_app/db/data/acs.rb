@@ -1,0 +1,12 @@
+AnswerChoice.import([:question_id,:text],
+[[1,'yes'],[1,'no'],
+[2,'yes'],[2,'no'],
+[3,'yes'],[3,'no'],
+[4,'yes'],[4,'no'],
+[5,'yes'],[5,'no'],
+[6,'yes'],[6,'no'],
+[7,'yes'],[7,'no'],
+[8,'yes'],[8,'no'],
+[9,'yes'],[9,'no'],
+[10,'yes'],[10,'no'],
+[11,'yes'],[11,'no']])

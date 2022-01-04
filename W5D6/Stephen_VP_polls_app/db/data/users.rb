@@ -1,0 +1,1 @@
+User.import([:username],[['user1'],['user2'],['user3']])
