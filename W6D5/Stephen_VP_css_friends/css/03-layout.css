@@ -1,0 +1,29 @@
+/* PHASE 3: Layout */
+
+.content{
+    display: block;
+    margin: 0px 20px 0px 20px;
+    border: 1px solid black;
+}
+.content-sidebar{
+    display: block;
+    border: 1px solid black;
+    background-color: rgb(240, 226, 226);
+    width: 25%;
+    min-height: 200px;
+    float: left;
+    clear: both;
+}
+.content:after{
+    content: "";
+    display: block;
+    clear: both;
+}
+.content-main{
+    display: block;
+    border: 1px solid white;
+    background-color: rgb(240, 226, 226);
+    width: 74.3%;
+    min-height: 200px;
+    float: right;
+}

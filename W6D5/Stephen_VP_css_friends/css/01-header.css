@@ -1,0 +1,48 @@
+/* PHASE 1: Header */
+body{
+    font-family: sans-serif;
+    font-size: 30;
+    font-weight: 300;
+}
+header{
+    z-index: 1;
+    font-weight: 800;
+    position: relative;
+    background-color: red;
+    color: white;
+    margin: 20px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    border-bottom: 1px solid green;
+}
+
+nav{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    box-sizing: border-box;
+    
+}
+
+nav ul{
+    display: flex;
+    overflow: scroll;
+}
+nav ul{
+    align-items: center;
+    
+    
+}
+
+nav li, nav h1{
+    padding: 25px 25px 25px 25px;
+
+}
+
+nav ul li{
+    margin-left: auto;
+     border-left: 2px solid white; 
+}
+
+
+
