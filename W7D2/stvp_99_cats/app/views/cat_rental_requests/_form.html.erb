@@ -1,0 +1,32 @@
+<% action_url = (action == :new) ? cat_rental_requests_url : cat_rental_request_url(rental) %>
+
+<form action="<%=action_url %>" method = "post">
+
+<% if action == :edit  %>
+    <input type="hidden" name = "_method" value ="PATCH">
+<% end %>
+
+<label for="cat_choices">Please select the cat for rental</label>
+<select name="rental[cat_id]" id="cat_choices">
+    <option disabled <%= (action == :new) ? "selected" : ""  %>>--Please select the cat--</option>
+    <% if cats.length == 1 %>
+         <option value="<%=cats.first.id %>" selected><%= cats.first.name %></option>
+    <% else %>
+    <% cats.each do |cat| %>
+        <option value="<%= cat.id %>" <%= (rental.cat_id == cat.id) ? "selected" : ""  %>><%= cat.name %> </option>
+    <% end %>
+    <% end %>
+</select>
+<br>
+
+<label for="start_date"> The day you want to rent </label>
+<input type="date" id = "start_date" name="rental[start_date]">
+<br>
+
+<label for="end_date"> The day you want to return </label>
+<input type="date" id = "end_date" name="rental[end_date]">
+<br>
+
+<input type="submit" value = "<%= (action == :new) ? "Make new request" : "Edit your request"  %>">
+
+</form>

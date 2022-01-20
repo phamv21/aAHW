@@ -1,0 +1,3 @@
+<h1>Please fill out the information of the new cat</h1>
+<h1><%= @cat.errors.full_messages.empty? ? "" : @cat.errors.full_messages.first %></h1>
+<%= render "form", cat: @cat, action: :new %>

@@ -1,0 +1,36 @@
+<h1>
+<%= "#{@cat.name}'s info"  %>
+</h1>
+
+<h3>Age: <%= @cat.age %></h3>
+<h3>Color: <%= @cat.color %></h3>
+<h3>Sex: <%= @cat.sex %></h3>
+<h3>Description: <%= @cat.description %></h3>
+<h2>Renting details</h2>
+<ul>
+
+<% @rentals.each do |rental| %>
+    <li>
+    TICKET NUMBER: <%= rental.id %>
+    <br>
+    FROM:<%= rental.start_date %> TO: <%= rental.end_date %>
+    <br>
+    STATUS: <%= rental.status %>
+    <br>
+    <%if rental.pending? %>
+        <form action="<%=approve_cat_rental_request_url(rental.id)%>">
+        <input type ="submit" value="APPROVE">
+        </form>
+
+         <form action="<%=deny_cat_rental_request_url(rental.id)%>">
+        <input type ="submit" value="DENY">
+        </form>
+        
+    <% end %>
+    </li>
+<br>
+<% end %>
+
+</ul>
+
+

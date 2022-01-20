@@ -1,0 +1,3 @@
+<h1> Create a new request</h1>
+<h1><%= @rental.errors.full_messages.empty? ? "" : @rental.errors.full_messages.first %></h1>
+<%= render 'form',action: :new, cats: @cats, rental: @rental  %>

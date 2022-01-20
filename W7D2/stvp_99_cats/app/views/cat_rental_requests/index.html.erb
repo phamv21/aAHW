@@ -1,0 +1,16 @@
+<h1>All current rentals</h1>
+<ul>
+
+<% @rentals.each do |rental| %>
+    <li>
+    <h3>  <%= rental.cat.name %>   </h3>
+    <p>From: <%= rental.start_date %>
+    
+    <%= "---"*(rental.end_date - rental.start_date).abs %>
+    
+    ->To: <%= rental.end_date %></p>
+    </li>
+<% end %>
+
+
+</ul>
