@@ -1,0 +1,18 @@
+
+<%= render "/shared/top" %>
+
+
+
+<h2>Bands</h2>
+<div class="showing-main">
+<% @bands.each do |band| %>
+<a href="<%= band_url(band) %>" class="big-button"> <%= band.name %></a>
+<% end %>
+</div>
+
+
+<h3>Link</h3>
+<br>
+<div class="showing-bottom">
+<a href="/bands/new" class="small-button"> New Band</a>
+</div>

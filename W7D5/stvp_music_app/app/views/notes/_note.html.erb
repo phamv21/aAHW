@@ -1,0 +1,22 @@
+<h2>Notes</h2>
+<table>
+<% notes.each do |note| %>
+<tr>
+  <td>
+   <%= note.user.username %>: <%= note.note %> 
+  </td>
+  
+  <% if note.user == current_user %>
+  <td>
+    <form action="<%= note_url(note) %>" method="POST">
+    <%= auth_token %>
+    <input type="hidden" name="_method" value="DELETE">
+    <input type="submit" value="Delete">
+    </form>
+    </td>  
+  <% end %>
+  </tr>
+    
+<% end %>
+
+</table>

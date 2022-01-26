@@ -1,0 +1,43 @@
+
+<%= render "shared/top" %>
+<% action_url = action == :new ? tracks_url : track_url(track) %>
+
+<div class="showing-main">
+<!-- album_id, title, ord, lyric, regular or bonus-->
+
+<form action="<%= action_url %>" method ="POST">
+<%= auth_token %>
+
+<% if action == :edit %>
+<input type="hidden" name="_method" value ="PATCH">    
+<% end %>
+<label for="title"> Title:</label>
+<input id="title" type="text" name="track[title]" value="<%=track.title  %>" >
+
+<label for="ord">ORD:</label>
+<input type="number" name ="track[ord]" id="ord" value="<%= track.ord %>">
+
+<label for="regular">Regular:</label>
+<input type="radio" id="regular" name="track[regular]" value="true" <%= "checked" if track.regular? %>>
+
+<label for="bonus">Bonus:</label>
+<input type="radio" id="bonus" name="track[regular]" value="false" <%= "checked" if track.bonus? %>>
+<ul>
+    <select name="track[album_id]" id="album_id">
+        <% albums.each do |album| %>
+        <li>
+            <option value="<%=album.id%>" <%= "selected" if album == current_album %>><%=album.title%></option>
+        </li>
+        <% end %>
+     </select>
+</ul>
+<br>
+<label for="lyric">Lyric</label>
+<br>
+<textarea name="track[lyric]" id="lyric" cols="30" rows="20"><%= track.lyric %>
+</textarea>
+
+<input type="submit" value="Submit">
+</form>
+
+</div>

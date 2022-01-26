@@ -1,0 +1,25 @@
+
+<h2>Sign Up</h2>
+<h3>Please enter your details</h3>
+<a href="/session/new">Goto Sign In</a>
+<%= render partial: 'errors/errors' %>
+<form action="<%=users_url%>" method="POST">
+    <%= auth_token %>
+    <ul>
+    <li>
+    <label for="username">Username:</label> 
+    <br>
+    <input type="text" name="user[username]" id="username" value="<%= @user.username%>">
+    </li>
+    <br>
+    <li>
+    <label for="password">Password:</label>
+    <br>
+    <input type="password" name="user[password]" id="password" value="<%= @user.password%>">
+    </li>
+    <br>
+    <li>
+    <input type="submit" value ='Sign up'>
+    </li>
+    </ul>
+</form>

@@ -1,0 +1,31 @@
+<%= render "/shared/top" %>
+
+
+<h1><%= @album.title %> </h1>
+<div class="showing-main">
+
+<% @album.tracks.each do |track| %>
+
+    <a href="<%= track_url(track) %>" class="big-button"><%= track.title %> Vol: <%= track.ord %></a>
+
+<% end %>
+
+
+
+</div>
+
+<div class="showing-bottom">
+<!-- new album , edit band, destroy band, back to band-->
+<a href="<%=new_album_track_url(@album)%>"class='small-button'>New Track</a>
+<a href="<%=edit_band_url(@album.band) %>"class='small-button'>Edit Band</a>
+
+<form action="<%=band_url(@album.band) %>" method="POST">
+<%= auth_token %>
+<input type="hidden" name="_method" value="DELETE">
+<input type="submit" value="Destroy this band"class='small-button'>
+</form>
+
+<a href="<%=band_url(@album.band)  %>"class='small-button'>Back To <%= @album.band.name %></a>
+
+
+</div>

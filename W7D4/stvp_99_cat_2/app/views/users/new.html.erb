@@ -1,0 +1,21 @@
+<h1>THIS IS THE NEW USER</h1>
+<%= render partial: 'users/errors' %>
+
+<h1>Signup Page</h1>
+
+<form action= '<%=users_url%>' method='post'>
+<input type="hidden" name="authenticity_token" 
+value ="<%= form_authenticity_token  %>"
+>
+<label for="username">Enter Username</label>
+<br>
+<input type="text" name="user[username]" id="username" value ="<%= @user.username %>">
+<br>
+
+<label for="password">Enter Password (more than 6 letters)</label>
+<br>
+<input type="password" name="user[password]" id="password">
+
+<input type="submit" value='Sign Up'>
+
+</form>

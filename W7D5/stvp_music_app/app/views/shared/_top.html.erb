@@ -1,0 +1,19 @@
+<div class="showing-top">
+
+<a href="/bands" class="small-button">Home</a>
+<br>
+ <p>Login as: <%= current_user.username %></p>
+
+<form action="/session" method="POST" >
+<input type="hidden" name="_method" value="DELETE">
+<%= auth_token %>
+<input type="submit" value="Logout" class="small-button">
+</form>
+<br>
+
+
+
+</div>
+<p>
+<%= flash.now[:notice] %>
+</p>

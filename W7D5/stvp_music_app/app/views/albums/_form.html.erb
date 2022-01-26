@@ -1,0 +1,46 @@
+
+
+
+
+
+<% if action == :new 
+action_url = albums_url%>
+<h1>New</h1>
+<% else action_url = edit_album(@album)%>
+<h1>Edit</h1>
+<% end %>
+
+<%= render "/shared/top" %>
+
+
+<div class="showing-main">
+<form action="<%= action_url%>" method="POST" >
+<%= auth_token %>
+<label for="title">Title:</label>
+<br>
+<input type="text" name="album[title]" value="<%=album.title %>">
+<br>
+<label for="band">Band</label>
+<br>
+<select name="album[band_id]" id="band">
+
+<% bands.each do |band| %>
+    <option value="<%= band.id%>" <%= current_band == band ? "selected" : "" %>><%= band.name %></option>
+<% end %>
+
+
+</select>
+
+<label for="year">Year:</label>
+<br>
+<input type="number" name="album[year]" value="<%=album.year %>">
+<br>
+<label for="live">Live's Record</label>
+<input type="radio" id="live" name="album[live]" value="true" <%= "checked" if album.live %>>
+
+<label for="studio">Studio's Record</label>
+<input type="radio" name="album[live]" value="false" <%= "checked" unless album.live %>>
+<input type="submit" value="Submit"class="small-button">
+</form>
+
+</div>

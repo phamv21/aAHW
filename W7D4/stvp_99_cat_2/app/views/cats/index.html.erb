@@ -1,0 +1,17 @@
+
+<p><%=  current_user_session.session_device if current_user_session %></p>
+<% if current_user.nil? %>
+      <form action ="/session/new" method="get">
+          <input type="hidden" name ="authenticity_token" value ="<%=form_authenticity_token  %>">
+          <input type="submit" value = 'Log in'>
+        </form>    
+<% end %>
+<h1>Cats upon cats!</h1>
+<p><%= flash.now[:notice] %></p>
+<ul>
+  <% @cats.each do |cat| %>
+    <li><a href="<%= cat_url(cat) %>"><%= cat.name %></a></li>
+  <% end %>
+</ul>
+
+<a href="<%= new_cat_url %>">Create cat</a>

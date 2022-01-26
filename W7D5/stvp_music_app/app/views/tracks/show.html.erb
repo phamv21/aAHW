@@ -1,0 +1,27 @@
+
+<%= render "/shared/top" %>
+
+
+<h1><%=@track.title%></h1>
+
+<pre>
+<%= ugly_lyric(@track.lyric) %>
+</pre>
+
+<%= render "/notes/form",track: @track %>
+
+<%= render "/notes/note",notes: @track.notes.includes(:user) %>
+<div class="showing-main">
+</div>
+
+<div class="showing-bottom"> <!-- the links edit track, destroy track, return-->
+<!-- edit-track destroy track  -->
+<a href="<%= edit_track_url(@track) %>" class='small-button'>Edit Track</a>
+
+<form action="<%= track_url(@track) %>"  method="POST">
+<%= auth_token %>
+<input type="hidden" name="_method" value="DELETE">
+<input type="submit" value="Delete this track" class='small-button'>
+</form>
+<a href="<%= album_url(@track.album) %>" class='small-button'>return to: <%= @track.album.title %></a>
+</div>

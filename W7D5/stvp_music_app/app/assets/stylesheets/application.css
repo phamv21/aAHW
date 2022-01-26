@@ -1,0 +1,142 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+ @import url('https://fonts.googleapis.com/css2?family=Bungee+Inline&family=Moo+Lah+Lah&display=swap');
+
+body{
+    background-color: black;
+}
+.main-content{
+    width: 70%;
+    margin: auto;
+    border: solid, gray;
+    border-width: 0 5px;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background-color: pink;
+    align-items: center;
+}
+h1{
+    
+    font-family: 'Moo Lah Lah', cursive;
+    font-size: 64px;
+    color:  yellow;
+    display: flex;
+    justify-content: center;
+
+}
+h2{
+    font-family: 'Bungee Inline', cursive;
+    font-size: 30px;
+    color: green;
+    display: flex;
+    justify-content: center;
+
+}
+h3{
+    font-family: 'Bungee Inline', cursive;
+    font-size: 20px;
+    color: peru;
+    display: flex;
+    justify-content: center;
+}
+    li{
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    flex-wrap: wrap;
+}
+form{
+    display: flex;
+    justify-content: center;
+}
+a{  
+   background-color: rgb(24, 47, 61);
+    color: rgb(224, 205, 205);
+    border-radius: 10%;
+    display: flex;
+    justify-items: center;
+    text-align: center;
+    padding: 14px;
+
+}
+.showing-top ,.showing-bottom, .showing-main{
+    display: flex;
+    flex-flow: row;
+    min-height: 5vh;
+    
+   
+}
+
+.showing-main > form{
+    display: flex;
+    flex-flow: column;
+    flex-wrap: wrap;
+    align-items: center;
+    
+}
+.showing-main > table{
+    display: flex;
+    flex-flow: column;
+    flex-wrap: wrap;
+    align-items: center;
+    
+}
+
+ pre{
+    font-size: 12px;
+    border-radius: 10%;
+    background-color: ivory;
+    color: peru;
+    display: flex;
+    width: fit-content;
+    padding: 20px 20px 20px 20px;
+    margin-left: 2%;
+    justify-content: center;
+}
+
+.small-button{
+    display: flex;
+    flex-flow: row;
+    border-radius: 10%;
+    cursor: pointer;
+    background-color: rgb(40, 103, 139);
+    color: rgb(224, 205, 205);
+    border: none;
+    text-decoration: none;
+     margin-right: 20px;
+
+}
+
+
+
+.big-button {
+    display: flex;
+    flex-flow: row;
+    align-content: center;
+    border-radius: 10%;
+    cursor: pointer;
+    min-height: 8vh;
+    padding: 8vh;
+    font-size: 20px;
+    background-color: rgb(141, 207, 245);
+    color: rgb(102, 66, 66);
+    border: none;
+    text-decoration: none;
+    margin-bottom: 20px;
+    margin-right: 15px;
+}
