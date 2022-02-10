@@ -1,0 +1,58 @@
+.main-nav {
+display: flex;
+justify-content: space-between;
+padding: 10px;
+border-bottom: solid 1px $light-gray;
+
+
+}
+
+.left-nav > ul,
+.right-nav > ul {
+  display: flex;
+  align-items: center;
+
+}
+
+.left-nav {
+
+  > ul {
+    > li {
+  padding:5px;
+  font-size: 13px;
+  margin-right: 20px;
+  border-radius: 3px;
+    }
+  }
+
+  span {
+text-transform: uppercase;
+margin-left: 5px;
+  }
+}
+
+.right-nav  {
+
+  > ul {
+
+    > li {
+      padding: 5px;
+      border-radius: 3px;
+      margin-right: 5px;
+    }
+
+    > li:last-of-type {
+      margin-left: 10px;
+      font-size: 15px;
+    }
+  }
+  
+  i {
+
+  }
+}
+
+.left-nav > ul > li:hover,
+.right-nav > ul > li:last-of-type:hover {
+background-color: $light-gray;
+}

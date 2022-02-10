@@ -1,0 +1,29 @@
+.sections-nav{
+    display: flex;  
+    padding-bottom: 10px;
+    padding-top: 10px;
+    border-bottom: solid 1px $light-gray;
+    align-items: center;
+    justify-content: center;
+    ul{
+        display: flex;
+        justify-content: center;
+    }
+    a{
+        margin: 0 5px;
+    }
+    a:hover{
+        border-radius: 3px;
+        text-decoration: none;
+        background-color: $light-gray;
+
+    }
+    #sections-all:hover{
+
+        text-decoration: underline;
+        background-color: transparent; 
+    }
+    
+}
+
+    
