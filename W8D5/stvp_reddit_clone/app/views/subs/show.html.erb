@@ -1,0 +1,21 @@
+<h1><%= @sub.title %></h1>
+
+<h2>Description</h2>
+<p>
+<%= @sub.description %>
+</p>
+<br>
+<a href="<%= new_sub_url %>">Make a new Sub</a>
+
+<h3>all the posts in this sub</h3>
+
+<ul>
+    
+    <% @vote_of_posts.each do |post,votes| %>
+         
+    <li>
+        (<%= votes %>)<a href="<%= post_url(post) %>"><%= post.title %></a>
+    </li>
+    <% end %>
+   
+</ul>

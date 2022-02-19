@@ -1,0 +1,14 @@
+<h1> Login Page   </h1>
+
+<%= render partial: "shared/errors" %>
+<form action ="<%= session_url %>" method="POST"> 
+ <%= auth_token %>
+ <label for="username">Username</label>
+ <input type="text" name="user[username]">
+
+ <label for="password">Password</label>
+ <input type="password" name="user[password]">
+ <input type="submit" name="Login">
+</form>
+<br>
+<a href="<%= new_user_url %>">Sign Up</a>

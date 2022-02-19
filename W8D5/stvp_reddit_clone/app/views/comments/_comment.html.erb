@@ -1,0 +1,25 @@
+<% @comments = all_comments.dup %>
+<% @comment = comment 
+    @votes = votes.dup%>
+
+<% def comment_tree(node) %>
+     
+    <li>
+(<%= @votes[node[0]] %>)<a href="<%= comment_url(node[0]) %>"><%= node[0].content %> ___by: <%= node[1] %></a>
+    </li>
+   
+        <% unless @comments[node[0].id].empty?  %>
+        <% @comments[node[0].id].each do |sub| %>
+        <ul>
+        <% comment_tree(sub) %>
+        </ul>
+        <% end %>
+        <% end %>
+
+    
+
+
+<% end %>
+
+<%= comment_tree(@comment) %>
+

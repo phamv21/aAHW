@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>StvpRedditClone</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag 'application', media: 'all' %>
+  </head>
+  <body>
+   <header>
+  
+    <a href="<%= subs_url %>">all the sub</a>
+    <% if current_user %>
+      <p>Good day <%=current_user.username%></p>
+      <form action="<%= session_url %>" method="POST">
+      <%= auth_token %>
+      <input type="hidden" name="_method" value="DELETE">
+      <input type="submit" value="logout">
+      </form>
+    <% end %>
+
+    </header>
+ 
+
+    <%= yield %>
+  </body>
+</html>

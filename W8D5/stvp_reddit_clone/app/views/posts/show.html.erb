@@ -1,0 +1,54 @@
+<h1>(<%= @my_vote %>)<%= @post.title %> by: <%= @post.author.username %></h1>
+<br>
+
+<form action="<%=upvote_post_url(@post) %>" method="POST">
+<%= auth_token %>
+<input type="submit" value="upvote">
+</form>
+<br>
+
+<form action="<%=downvote_post_url(@post) %>" method="POST">
+<%= auth_token %>
+<input type="submit" value="downvote">
+</form>
+
+<br>
+<% @post.subs.each do |sub| %>
+    <a href="<%= sub_url(sub) %>"> <%= sub.title  %> </a>
+    <br>
+<% end %>
+
+
+<h3>Content</h3>
+<p>
+    <%= @post.content %>
+</p>
+<h3>URL</h3>
+<p><%= @post.url %></p>
+<a href="<%= new_post_url  %>">New Post</a> 
+<br>
+<a href="<%= new_post_comment_url(@post)%>"> leave a comment </a> 
+<br>
+
+<h2>Comment section</h2>
+
+<% @all_comments.each do |p_id,c_array| %>
+    
+    <% if p_id.nil?  %> <!-- level 0 -->
+        <% c_array.each do |top_comment| %>
+        
+
+                <ul>
+                    <%= render "/comments/comment",all_comments:@all_comments, comment:top_comment, votes:@vote_of_comments %>        
+                </ul>
+        
+        <% end %>
+    <% end %>
+    
+    
+
+<% end %>
+
+
+
+<a href="<%=edit_post_url(@post)%>">Edit</a>
