@@ -1,0 +1,53 @@
+.hanoi{
+    display: block;
+    width: 600px;
+    margin: 10px auto;
+}
+h3{
+    text-align: center;
+}
+ul{
+    width: 150px;
+    height: 100px;
+    margin: 5px;
+    border-bottom: 5px solid black;
+    float: left;
+    list-style: none;   
+    vertical-align: bottom;
+    cursor: pointer;
+
+
+}
+ul.selected{
+    border-bottom: 5px solid red;
+}
+li{
+    height: 30px;
+    background-color: transparent;
+    width: 130px;
+    margin: 3px;
+    border-radius: 25px;
+}
+li.num-3{
+    width: 130px;
+    margin-left: -10px;
+    background-color: gray;
+}
+li.num-2{
+    width: 100px;
+    margin-left: 0px;
+    background-color: gray;
+}
+li.num-1{
+    width: 50px;
+    margin-left: 20px;
+    background-color: gray;
+}
+
+
+.group::after{
+    display: block;
+    content: "";
+    clear: both;
+
+}

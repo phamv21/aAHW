@@ -1,0 +1,34 @@
+.tweet-compose{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 20px;
+}
+.tweet-compose textarea{
+
+    width: 400px;
+    height: 200px;
+    border-radius: 10px;
+    padding: 20px;
+
+}
+.tweet-action {
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: first baseline;
+    /* background-color: #1da1f2;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 20px; */
+    
+}
+.tweet-action button,input[type=submit]{
+    background-color: #1da1f2;
+
+    color: white;
+    margin: 0;
+    padding: 10px 20px 10px;
+    border-radius: 20px;
+}

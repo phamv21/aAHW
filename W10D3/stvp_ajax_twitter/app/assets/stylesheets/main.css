@@ -1,0 +1,8 @@
+main{
+    display: block;
+    width: 60%;
+    margin: 20px auto;
+    border-radius: 20px;
+    justify-content: center;
+    background-color: white;
+}

@@ -1,0 +1,49 @@
+header {
+    display: flex;
+    width: calc(100%-30px);
+    justify-content: space-between;
+    align-items: center;
+    background-color: white;
+}
+/* header::after{
+    content: "";
+    display: block;
+    clear: both;
+} */
+
+
+header ul{
+    align-self: center;
+    display: flex;
+    justify-items: flex-end;
+    margin: 0;
+    padding: 0;
+}
+header li{
+    display: flex;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+}
+header input{
+    padding: 20px;
+    background-color: white;
+    color: black;
+    border: none;
+}
+header strong{
+    display: flex;
+    justify-content: flex-start;
+    font-family: 'Playball', cursive;
+    color: #1da1f2;
+    font-size: 40px;
+}
+
+header a{
+    padding: 20px;
+}
+
+header li:hover{
+    border-bottom: 1px solid black;
+
+}

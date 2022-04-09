@@ -1,0 +1,64 @@
+h1{
+    width: 500px;
+    margin: 10px auto;
+
+}
+.ttt{
+    width:600px;
+    margin: 0 auto;
+    background: none;
+}
+li{
+    float: left;
+    background-color: rgb(196, 192, 192);
+    margin: 1px;
+}
+.yellow{
+    background-color: yellow;
+}
+
+li.x{
+    background-color: white;
+}
+li.x::after{
+    content: "x";
+    padding: 30px;
+    font-size: 80px;
+}
+li.o{
+    background-color: white;
+ 
+}
+li.o::after{
+    content: "o";
+    font-size: 80px;
+    padding: 30px;
+}
+.square{
+    width: 100px;
+    height: 100px;
+    outline: 8px solid black;
+    list-style-type: none;
+    float: left;
+}
+ul.group{
+    display: block;
+    margin: 0;
+    padding: 0;
+    width: 600px;
+
+}
+
+.group::after{
+    display: block;
+    content: "";
+    clear: both;
+}
+li.winner{
+    background-color: green;
+    color: white;
+}
+li.looser{
+    background-color: white;
+    color: red;
+}

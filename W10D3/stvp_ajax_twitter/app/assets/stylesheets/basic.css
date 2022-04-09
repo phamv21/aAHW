@@ -1,0 +1,39 @@
+@import url('https://fonts.googleapis.com/css2?family=Bungee+Inline&family=Lato:wght@100&family=Moo+Lah+Lah&family=Playball&display=swap');
+
+
+body{
+    font-family: 'Lato', sans-serif;
+    margin: auto;
+    background-color: rgb(228, 224, 224);
+}
+h1, b{
+    display: flex;
+    justify-content: center;
+    font-family: 'Playball', cursive;
+    font-size: 40px;
+    color: #1da1f2;
+
+}
+ul{
+    list-style: none;
+}
+a{
+    display: block;
+    text-decoration: none;
+
+}
+li{
+    display: block;
+}
+button{
+    background-color:#1da1f2;
+    color: white;
+    border-radius: 10px;
+
+}
+input[type=text],input[type=password]{
+    padding: 5px;
+    margin: 20px;
+    border: #1da1f2 solid 1px;
+    border-radius: 5px;
+}

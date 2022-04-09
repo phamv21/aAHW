@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>AjaxTwitter</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all' %>
+    <%= javascript_include_tag 'application' %>
+    <% if true %>
+    <script type="text/javascript">
+    window.users = <%=raw render(template:  "/users/_all.json") %>
+    
+    </script>
+  <% end %>
+  </head>
+
+  <body>
+  <header>
+  <strong> Twitter</strong>
+  <ul>
+      <li><a href="<%= feed_url %>">Feed</a></li>
+      <li><a href="<%= search_users_url %>">User Search</a></li>
+    
+    <% if current_user %>
+      <li>
+      <form action="/session" method="POST">
+        <input type="hidden" name="_method" value="DELETE">
+        <input
+          type="hidden"
+          name="authenticity_token"
+          value="<%= form_authenticity_token %>">
+
+        <input type="submit" value="Logout!">
+      </form>
+      <li>
+    <% end %>
+    </ul>
+    </header>
+    <main>
+    <%= yield %>
+    </main>
+  </body>
+</html>

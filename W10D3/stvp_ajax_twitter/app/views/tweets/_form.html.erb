@@ -1,0 +1,26 @@
+
+<form class="tweet-compose" data-tweets-ul="#feed">
+  <input
+      type="hidden"
+      name="authenticity_token"
+      value="<%= form_authenticity_token %>">
+
+  <label>
+    <textarea name="tweet[content]" placeholder="what's on your mind?"></textarea>
+  </label>
+
+
+    <ul class="mention-users">
+    
+  <strong class="chars-left"></strong>
+  </ul>
+    <ul class='tweet-action'>
+    <li>
+        <button class="add-mention-users"> Mention</button>
+    </li>
+    <li>
+        <input type="Submit" value="Post Tweet!">
+    </li>
+    </ul>
+  
+</form>

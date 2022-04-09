@@ -1,0 +1,15 @@
+.users-search{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    background-color: white;
+
+}
+.users-search li{
+    display: flex;
+    width: 50%;
+    justify-content: space-between;
+}
+.users-search button{
+    width: 80px;
+}
