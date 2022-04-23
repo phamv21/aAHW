@@ -1,0 +1,4 @@
+./dist/bundle.js
+./dist/bundle.js.map
+node_modules
+./src/api_key.jsx
