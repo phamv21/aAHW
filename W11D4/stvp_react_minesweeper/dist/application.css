@@ -1,0 +1,63 @@
+.game{
+    text-align: center;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.board{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.board ul{
+    display: flex;
+    align-self: center;
+    justify-self: center;
+    list-style: none;
+    flex-direction: row;
+    margin: 0;
+    margin-left: -40px;
+}
+.tile{
+    display: block;
+    height: 30px;
+    width: 30px;
+    background-color: gainsboro;
+    /* border: 0.2px gray solid; */
+    border-style: outset;
+    text-align: center;
+}
+.explored{
+    border-style: inset;
+}
+.flagged::after{
+content: "\2691";
+}
+.bombed::after{
+    content: "\1F4A3";
+}
+.gameover{
+    display: none;
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    top:0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.75);
+}
+.gameover form{
+    display: block;
+    width:300px;
+    height: 100px;
+
+    background-color: white;
+    padding: 20px;
+    margin: 100px auto;
+    border-radius: 10px;
+}
+.finished{
+    display: block;
+}
