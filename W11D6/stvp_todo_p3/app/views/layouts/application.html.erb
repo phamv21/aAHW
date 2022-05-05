@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>StvpTodoP3</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag 'application', media: 'all' %>
+    <%= javascript_pack_tag 'application' %>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  </head>
+
+  <body>
+  <header>
+<% if !current_user.nil? %>
+ <p>hello: <%= current_user.username %>   </p> 
+<form action="/session" method= 'post'> 
+<input type="hidden" name='_method' value='delete' />
+<%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+<input type="submit" name="user" id="" value='logout'/>
+</form>
+
+<% else %>
+<a href="/session/new">Login</a>
+<% end %>
+
+</header>
+    <%= yield %>
+  </body>
+</html>

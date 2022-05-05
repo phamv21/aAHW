@@ -1,0 +1,28 @@
+<% if action == 'new_session' %>
+<h1>Login</h1>
+<% action_url = session_url %>
+<% action_type = 'Log in' %>
+<% alter_url = new_user_url %>
+
+<% else %>
+<h1>Signup</h1>
+<% action_url = users_url %>
+<% action_type = 'Sign up' %>
+<% alter_url = new_session_url %>
+<% end %>
+
+<form action="<%= action_url %>" method='POST'>
+
+<%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+    <label for="">
+    Username:
+    <input type="text" name="user[username]" id="">
+    </label>
+
+    <label for="">
+    Password:
+    <input type="password" name="user[password]" id="">
+    </label>
+    <input type="submit" name="" id="" value = <%= action_type%>>
+</form>
+<a href="<%= alter_url %>"> change</a> 

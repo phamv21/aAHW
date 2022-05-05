@@ -1,0 +1,45 @@
+npm install package1 package2 etc
+You'll need the following packages:
+npm init -y
+
+npm install webpack webpack-cli react react-dom redux react-redux @babel/core babel-loader @babel/preset-react @babel/preset-env
+______________
+package.jscon
+"scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "webpack": "webpack --watch --mode=development"
+
+  },
+
+__________
+
+
+webpack.config.js
+var path = require('path');
+
+module.exports = {
+context: __dirname,
+  entry: './frontend/entry.jsx',
+  output: {
+    path: path.resolve(__dirname),
+    filename: './bundle.js',
+  },
+  module: {
+    rules: [
+      {
+        test: [/\.jsx?$/],
+        exclude: /(node_modules)/,
+        use: {
+          loader: 'babel-loader',
+          options: {
+            presets: ['@babel/env', '@babel/react']
+          }
+        },
+      }
+    ]
+  },
+  devtool: 'source-map',
+  resolve: {
+    extensions: ['.js', '.jsx', '*']
+  }
+};
