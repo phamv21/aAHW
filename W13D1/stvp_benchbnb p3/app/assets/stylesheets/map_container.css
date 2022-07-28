@@ -1,0 +1,33 @@
+ul {
+    list-style: none;
+}
+#map-container{
+    display: flex;
+    width: 500px;
+    height: 500px;
+}
+.search-field{
+    display: flex;
+    justify-items: flex-start;
+}
+
+.half-left{
+    display: flex;
+
+    width: 600px
+    
+}
+.half-right{
+    display: flex;
+    flex-direction: column;
+
+    
+}
+.half-right li,form{
+    margin-top: 10px;
+    border: 1px solid black;
+}
+.thumb{
+    width: 100px;
+    height: 100px;
+}
